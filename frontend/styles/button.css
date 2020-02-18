@@ -10,6 +10,7 @@ button {
   font-size: var(--lumo-font-size-m);
   font-weight: 500;
   height: var(--lumo-button-size);
+  line-height: var(--lumo-button-size);
   margin: var(--lumo-space-xs) 0;
   min-width: calc(var(--lumo-button-size) * 2);
   padding: 0 calc(var(--lumo-button-size) / 3 + var(--lumo-border-radius) / 2);
@@ -17,6 +18,10 @@ button {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
+}
+
+button span {
+  display: inline-block;
 }
 
 /* Sizes */
@@ -192,8 +197,10 @@ button.contrast.primary {
 
 button iron-icon {
   display: inline-block;
-  width: var(--lumo-icon-size-m);
   height: var(--lumo-icon-size-m);
+  margin-top: calc((var(--lumo-button-size) - var(--lumo-icon-size-m)) / 2);
+  vertical-align: top;
+  width: var(--lumo-icon-size-m);
 }
 
 button iron-icon[icon^="vaadin:"] {
