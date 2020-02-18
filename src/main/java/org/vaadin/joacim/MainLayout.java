@@ -9,20 +9,21 @@ import com.vaadin.flow.component.html.Nav;
 import com.vaadin.flow.component.html.UnorderedList;
 import com.vaadin.flow.router.RouterLink;
 
+@CssImport("./styles/button.css")
 @CssImport("./styles/shared-styles.css")
 public class MainLayout extends AppLayout {
 
-    public MainLayout() {
-        ListItem home = new ListItem(new RouterLink("Home", HomeView.class));
-        ListItem accounts = new ListItem(new RouterLink("Accounts", AccountsView.class));
-        ListItem payments = new ListItem(new RouterLink("Payments", PaymentsView.class));
-        UnorderedList list = new UnorderedList(home, accounts, payments);
-        Nav navigation = new Nav(list);
+	public MainLayout() {
+		ListItem home = new ListItem(new RouterLink("Home", HomeView.class));
+		ListItem accounts = new ListItem(new RouterLink("Accounts", AccountsView.class));
+		ListItem payments = new ListItem(new RouterLink("Payments", PaymentsView.class));
+		UnorderedList list = new UnorderedList(home, accounts, payments);
+		Nav navigation = new Nav(list);
 
-        Header header = new Header();
-        header.add(new DrawerToggle(), new RouterLink("MyApp", HomeView.class));
+		Header header = new Header();
+		header.add(new DrawerToggle(), new RouterLink("MyApp", HomeView.class));
 
-        addToDrawer(navigation);
-        addToNavbar(header);
-    }
+		addToDrawer(navigation);
+		addToNavbar(header);
+	}
 }
